@@ -1,6 +1,7 @@
 # Messari API Cookbook
 
 A collection of examples and guides demonstrating how to effectively use the Messari API.
+Offical docs: https://docs.messari.io/
 
 ## What is Messari?
 
