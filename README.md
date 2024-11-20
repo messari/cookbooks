@@ -1,6 +1,7 @@
 # Messari API Cookbook
 
 A collection of examples and guides demonstrating how to effectively use the Messari API.
+
 Offical docs: https://docs.messari.io/
 
 ## What is Messari?
@@ -14,10 +15,9 @@ This cookbook contains practical examples and tutorials to help developers:
 - Access cryptocurrency market data
 - Retrieve detailed asset metrics and profiles
 - Pull research articles and market analysis
-- Query historical price and volume data
-- Interact with Messari's various API endpoints
+- Query token unlock events and vesting schedule
 
-All examples are primarily written in Python, making it accessible for both beginners and experienced developers.
+All examples are written in Python, making it accessible for both beginners and experienced developers.
 
 ## Getting Started
 
