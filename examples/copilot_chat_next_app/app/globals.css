@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  background: var(--background);
+  background-color: #111827; /* Match the bg-gray-900 color */
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Charts styling */
+.charts-container {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Override prose defaults to ensure text is more vivid */
+.prose {
+  color: #e5e7eb !important;
+}
+.prose strong {
+  color: #f3f4f6 !important;
+}
+.prose p,
+.prose li {
+  color: #d1d5db !important;
+}
+
+/* Make sure both user and assistant messages are always visible */
+.bg-sky-950 .prose,
+.bg-sky-950 .prose p,
+.bg-sky-950 .prose li,
+.bg-sky-950 .prose strong,
+.bg-slate-800 .prose,
+.bg-slate-800 .prose p,
+.bg-slate-800 .prose li,
+.bg-slate-800 .prose strong {
+  color: #ffffff !important; /* White text for all messages */
+}
+
+/* Additional styling for user message content */
+.user-message-content,
+.markdown-content {
+  color: #ffffff !important;
+}
+
+.user-message-content p,
+.user-message-content li,
+.user-message-content strong,
+.user-message-content span,
+.markdown-content p,
+.markdown-content li,
+.markdown-content strong,
+.markdown-content span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: #e5e7eb !important;
+  }
+  .prose strong {
+    color: #f3f4f6 !important;
+  }
+  .prose p,
+  .prose li {
+    color: #d1d5db !important;
+  }
+}
+
+/* Chart and chat animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Add new styles for side-by-side layout */
+.chart-container {
+  width: 50%;
+  height: 100vh;
+  background-color: #111827;
+  overflow: auto;
+}
+
+.chat-container {
+  width: 50%;
+  transition: width 0.3s ease-in-out;
+}
+
+.chat-container.full-width {
+  width: 100%;
+}
+
+/* Update animations */
+main {
+  transition: width 0.3s ease-in-out;
+}
+
+main.absolute {
+  animation: slideInRight 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+  background: rgba(17, 24, 39, 0.8) !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+/* Dialog element reset */
+dialog {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Overlay for sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Citation link styling */
+.citation-link {
+  color: #4ade80; /* emerald-400 */
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0 2px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.citation-link:hover {
+  color: #34d399; /* emerald-500 */
+  background-color: rgba(74, 222, 128, 0.1);
+  text-decoration: underline;
+}
+
+/* Add a subtle highlight to the citation links */
+.citation-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4ade80;
+  opacity: 0.4;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.citation-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Tooltip animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Add a citation tooltip container style */
+.citation-tooltip {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  pointer-events: auto;
+}
+
+/* Small arrow for the tooltip */
+.tooltip-arrow {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
