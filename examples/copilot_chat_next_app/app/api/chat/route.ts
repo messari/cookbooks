@@ -1,4 +1,5 @@
 // Types and imports
+import { createClient } from "redis";
 import { ERROR_CODES, formatErrorMessage } from "../../utils/errorConstants";
 
 // Type definitions
@@ -16,18 +17,6 @@ interface ChatMessage {
 const baseUrl = process.env.BASE_URL;
 const VALID_VERBOSITY_OPTIONS = ["succinct", "balanced", "verbose"];
 const VALID_STREAM_FORMATS = ["vercel", "openai"];
-
-// Rate limiting constants
-const IP_RATE_LIMIT = 5; // 5 requests per IP when using default API key
-const GLOBAL_RATE_LIMIT = 500; // 500 requests total for default API key
-const IP_RATE_LIMIT_RESET_PERIOD = 60 * 60; // 1 hour in seconds
-const GLOBAL_RATE_LIMIT_RESET_PERIOD = 60 * 60 * 24; // 24 hours (1 day) in seconds
-
-// Function to get Redis client
-const getRedis = async () => {
-  const redis = await createClient({ url: process.env.REDIS_URL }).connect();
-  return redis;
-};
 
 // OpenAI Stream Handling
 function convertOpenAIToVercelStream(
@@ -225,7 +214,6 @@ function parseAndValidateRequest(reqBody: any): {
   // Vercel AI SDK might nest the apiSettings in a body property
   if (!apiSettings && reqBody.body && reqBody.body.apiSettings) {
     apiSettings = reqBody.body.apiSettings;
-    console.log("Found apiSettings in body property");
   }
 
   const customApiKey = apiSettings?.apiKey;
