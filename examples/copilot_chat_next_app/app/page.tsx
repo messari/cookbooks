@@ -100,7 +100,7 @@ function FixedLayout() {
               Ask about developer integration with the Copilot API and SDK
             </p>
             <a
-              href="https://github.com/messari/copilot-cookbook"
+              href="https://github.com/messari/cookbooks/tree/master/examples/copilot_chat_next_app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
