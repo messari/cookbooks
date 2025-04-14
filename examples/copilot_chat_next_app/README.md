@@ -7,9 +7,13 @@ A simple Next.js application that demonstrates how to integrate the Messari Copi
 - Real-time streaming responses with dynamic content rendering
 - Interactive data visualizations and charts based on query context
 - Inline citations with source attribution
-- Rate limiting with Redis for API protection
 - Mobile-responsive design with dark mode UI
 - Support for different verbosity levels and output formats
+
+## Getting an API Key
+- Sign up for Messari
+- Visit [Messari Account Settings](https://messari.io/account/api) to generate your API key
+- The Toolkit endpoints are accessible at api.messari.io/ai. For detailed API documentation, visit the [Messari Developer Docs](https://docs.messari.io/reference/chat-completion).
 
 ## Prerequisites
 
