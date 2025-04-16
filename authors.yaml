@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=./.github/authors_schema.json
+
+# You can optionally customize how your information shows up cookbook.messari.io over here.
+# If your information is not present here, it will be pulled from your GitHub profile.
+
+ytoast:
+  name: "Y Toast"
+  website: "https://github.com/ytoast"
+  avatar: "https://avatars.githubusercontent.com/u/52529078?v=4"
+
+bijan-massoumi:
+  name: "Bijan Massoumi"
+  website: "https://github.com/bijan-massoumi"
+  avatar: "https://avatars.githubusercontent.com/u/7463982?v=4"

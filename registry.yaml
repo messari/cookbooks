@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=./.github/registry_schema.json
+
+# This file is used to generate cookbook.messari.io. It specifies which paths we
+# should build pages for, and indicates metadata such as tags, creation date and
+# authors for each page.
+
+- title: Algotrade Sentiment Analysis
+  path: examples/algotrade_sentiment
+  date: 2024-03-28
+  authors:
+    - ytoast
+  tags:
+    - analysis
+
+- title: Copilot Chat Next.js Application
+  path: examples/copilot_chat_next_app
+  date: 2024-03-28
+  authors:
+    - bijan-massoumi
+  tags:
+    - apps

@@ -1,3 +1,4 @@
 .env
 .envrc
 output/
+node_modules
