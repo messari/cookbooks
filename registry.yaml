@@ -5,7 +5,7 @@
 # authors for each page.
 
 - title: Algotrade Sentiment Analysis
-  path: examples/algotrade_sentiment
+  path: examples/algotrade_sentiment/algotrade_sentiment.ipynb
   date: 2024-03-28
   authors:
     - ytoast
@@ -13,7 +13,7 @@
     - analysis
 
 - title: Copilot Chat Next.js Application
-  path: examples/copilot_chat_next_app
+  path: examples/copilot_chat_next_app/copilot_chat.mdx
   date: 2024-03-28
   authors:
     - bijan-massoumi
