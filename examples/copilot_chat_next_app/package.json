@@ -12,10 +12,10 @@
   "dependencies": {
     "ai": "^4.3.19",
     "lightweight-charts": "^5.0.8",
-    "next": "15.2.2",
+    "next": "15.2.6",
     "openai": "^4.104.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.1.2",
+    "react-dom": "^19.1.2",
     "react-markdown": "^10.1.0",
     "redis": "^4.7.1",
     "remark-gfm": "^4.0.1"
