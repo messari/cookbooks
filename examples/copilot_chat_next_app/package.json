@@ -13,9 +13,9 @@
     "postinstall": "next build"
   },
   "dependencies": {
-    "ai": "^4.3.19",
+    "ai": "^7.0.179",
     "lightweight-charts": "^5.0.8",
-    "next": "15.2.6",
+    "next": "15.5.29",
     "openai": "^4.104.0",
     "react": "^19.1.2",
     "react-dom": "^19.1.2",
